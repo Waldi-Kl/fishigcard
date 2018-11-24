@@ -5,13 +5,26 @@ import java.util.Date;
 public class Person {
 	
 	private int personId;
-	private String pesel;		// PESEL to tylko 11 ostatnich cyfr. UWAGA na kodowanie miesi¹ca daty urodzin w numerze PESEL
+	private String pesel;
 	private String surname;
 	private String name_1;
 	private String name_2;
 	private Date date;
 	private String city;
+	private int adresId;
 	
+	/**
+	 * @return the adresId
+	 */
+	public int getAdresId() {
+		return adresId;
+	}
+	/**
+	 * @param adresId the adresId to set
+	 */
+	public void setAdresId(int adresId) {
+		this.adresId = adresId;
+	}
 	public int getPersonId() {
 		return personId;
 	}

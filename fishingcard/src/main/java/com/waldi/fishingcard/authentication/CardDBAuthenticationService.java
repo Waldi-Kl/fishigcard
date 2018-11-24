@@ -28,14 +28,15 @@ public class CardDBAuthenticationService implements UserDetailsService{
 			// System.out.println("Jest user: " + userInfo.getId());
 
 		} catch (Exception e) {
-			System.out.println("Posz³o: getUserIngo=NULL");
+			System.out.println("Posz³o: getUserInfo=NULL");
 		}
 
 		if (userInfo.getName() == null) {
-			System.out.println("loadUserByUsername Author... ?");
+			System.out.println("loadUserByUsername not found.");
 			throw new UsernameNotFoundException("User " + userlogin + " was not found in the database");
 		} else {
-			userInfoDAO.setLoginDate(userInfo.getId());
+			//userInfoDAO.setLoginDate(userInfo.getId());
+			System.out.println("Znaleziono");
 		}
 
 		// [USER,ADMIN,..]

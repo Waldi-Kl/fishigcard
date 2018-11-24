@@ -14,7 +14,7 @@ public class UserInfo {
 	private String pass;
 	private String email;
 	private boolean enabled;
-	private Date lastLogin;
+	//private Date lastLogin;
 	private String resetToken;
 
 	public UserInfo() {
@@ -104,13 +104,13 @@ public class UserInfo {
 		this.enabled = enabled;
 	}
 
-	public Date getLastLogin() {
-		return lastLogin;
-	}
+//	public Date getLastLogin() {
+//		return lastLogin;
+//	}
 
-	public void setLastLogin(Date lastLogin) {
-		this.lastLogin = lastLogin;
-	}
+//	public void setLastLogin(Date lastLogin) {
+//		this.lastLogin = lastLogin;
+//	}
 
 	public String getResetToken() {
 		return resetToken;

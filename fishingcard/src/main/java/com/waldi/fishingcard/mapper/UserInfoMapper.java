@@ -14,22 +14,21 @@ public class UserInfoMapper implements RowMapper<UserInfo> {
 //			 "Select u.id, u.surname, u.name, u.login, u.pass, u.email "//
 //			+ " from user u ";
 	
-	"Select u.id, u.surname, u.name, u.login, u.pass, u.email, u.enabled, u.last_login, u.reset_token from user u ";
+	"Select u.USE_ID, u.USE_SURNAME, u.USE_NAME, u.USE_LOGIN, u.USE_PASS, u.USE_EMAIL, u.USE_ENABLED, u.USE_RESETTOKEN from user u ";
 
 	public UserInfo mapRow(ResultSet rs, int rowNum) throws SQLException {
 		// TODO Auto-generated method stub
 
-		int userId = rs.getInt("id");
-		String surname = rs.getString("surname");
-		String userName = rs.getString("name");
-		String userLogin = rs.getString("login");
-        String password = rs.getString("pass");        
-        String email = rs.getString("email"); 
+		int userId = rs.getInt("USE_ID");
+		String surname = rs.getString("USE_SURNAME");
+		String userName = rs.getString("USE_NAME");
+		String userLogin = rs.getString("USE_LOGIN");
+        String password = rs.getString("USE_PASS");        
+        String email = rs.getString("USE_EMAIL"); 
   
-        boolean enabled = rs.getBoolean("enabled");
-        Date lastLogin = rs.getDate("last_login");
-        String resetToken = rs.getString("reset_token");
-
+        boolean enabled = rs.getBoolean("USE_ENABLED");
+     //   Date lastLogin = rs.getDate("last_login");
+        String resetToken = rs.getString("USE_RESETTOKEN");
 
         UserInfo user = new UserInfo(surname, password);
         user.setName(userName);
@@ -37,7 +36,7 @@ public class UserInfoMapper implements RowMapper<UserInfo> {
         user.setId(userId);
         user.setEmail(email);
         user.setEnabled(enabled);
-        user.setLastLogin(lastLogin);
+    //  user.setLastLogin(lastLogin);
         user.setResetToken(resetToken);
         return user;
 

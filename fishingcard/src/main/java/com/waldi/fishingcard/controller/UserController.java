@@ -131,9 +131,7 @@ public class UserController {
 			case "HOST":
 				userInfoDAO.updateRule(3, idUser);
 				break;
-
 			default:
-				// System.out.println("Default");
 				userInfoDAO.updateRule(0, idUser);
 				break;
 			}

@@ -14,7 +14,7 @@ public class PersonMapper implements RowMapper<Person> {
 	
 	public static final String BASE_SQL = 
 
-	"Select p.id, p.pesel, p.surname, p.name_1, p.name_2, p.birth_date, p.city from person p ";
+	"Select p.PER_ID, p.PER_PESEL, p.PER_SURNAME, p.PER_NAME1, p.PER_NAME2, p.PER_BIRTH_DATE, p.PER_CITY, p.ADR_ID from person p ";
 	
 	private int personId ;
 	private String pesel;
@@ -23,20 +23,21 @@ public class PersonMapper implements RowMapper<Person> {
 	private String name_2;
 	private Date date;
 	private String city;
-
+	private int adresId;
 
 	@Override
 	public Person mapRow(ResultSet rs, int rowNum) throws SQLException {
 		// TODO Auto-generated method stub
-		this.personId = rs.getInt("id");
-		this.pesel = rs.getString("pesel");
-		this.surname = rs.getString("surname");
-		this.name_1 = rs.getString("name_1");
-		this.name_2 = rs.getString("name_2");
-		this.date = rs.getDate("birth_date");
-		this.city = rs.getString("city");
+		this.personId = rs.getInt("PER_ID");
+		this.pesel = rs.getString("PER_PESEL");
+		this.surname = rs.getString("PER_SURNAME");
+		this.name_1 = rs.getString("PER_NAME1");
+		this.name_2 = rs.getString("PER_NAME2");
+		this.date = rs.getDate("PER_BIRTH_DATE");
+		this.city = rs.getString("PER_CITY");
+		this.adresId = rs.getInt("ADR_ID");
 
-		this.peselMaker();
+		//this.peselMaker();
 
         Person person = new Person();
         person.setPersonId(this.personId);
@@ -46,6 +47,7 @@ public class PersonMapper implements RowMapper<Person> {
         person.setName_2(this.name_2);
         person.setDate(this.date);
         person.setCity(this.city);
+        person.setAdresId(this.adresId);
         
 		return person;
 	}
@@ -75,6 +77,14 @@ public class PersonMapper implements RowMapper<Person> {
 		
 		this.pesel = year.substring(2) + month + day + pesel;
 		
+	}
+
+	public int getAdresId() {
+		return adresId;
+	}
+
+	public void setAdresId(int adresId) {
+		this.adresId = adresId;
 	}
 
 }
