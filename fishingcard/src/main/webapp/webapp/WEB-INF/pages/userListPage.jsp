@@ -54,7 +54,8 @@
 				<!--  Tu jakaś treść  -->
 				<div class="w3-container">
 
-					<table class="w3-table w3-striped w3-border" id="userTable">
+					<!-- <table class="w3-table w3-striped w3-border" id="userTable">  -->
+					<table class="w3-table-all" id="userTable">
 						<tr>
 							<th>Imię</th>
 							<th>Nazwisko</th>
